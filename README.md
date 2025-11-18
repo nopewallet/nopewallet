@@ -22,7 +22,7 @@ All private keys are encrypted and stored locally in the browser, ensuring full 
 ## Features
 
 - **Client-side key storage:** WebAuthn biometric unlock and AES-GCM encryption.
-- **Multi-chain support:** Solana, Ethereum, BNB, Polygon, Bitcoin.
+- **Multi-chain support:** Solana, Ethereum, BNB, Tron, Polygon, Bitcoin.
 - **Native and token transactions:** Send and receive native coins and EVM tokens.
 - **Custom token support:** Add your own ERC-20 contracts.
 - **Real-time market data:** Powered by Paynope.
@@ -44,6 +44,12 @@ Nopewallet is designed as a modular, minimal, and fully client-side application:
 - **Send Component:**  
   Sends native coins or EVM tokens.  
   Supports dynamic token loading from a database or custom contract list.
+
+- **Backup and Recovery Component:**
+  Move wallets between the browsers.
+  Export `localStorage` data into a password protected downloadable JSON file.
+  Import the `localStorage` data to recover your wallets.  
+  
 
 **Tech Stack:**
 
