@@ -1,7 +1,7 @@
 # Nopewallet
 
 Nopewallet is a simple, secure, open-source, multi-chain cryptocurrency wallet built with **Next.js**, **Shadcn/UI**, and **Node.js**.  
-All private keys are encrypted and stored locally in the browser, ensuring full client-side custody. Nopewallet supports **Solana**, **Ethereum**, **BNB Smart Chain**, **Tron**, **Polygon**, and **Bitcoin**, and is fully extensible with custom tokens and data sources. Live wallet: [https://nopewallet.com](https://nopewallet.com)
+All private keys are encrypted and stored locally in the browser, ensuring full client-side custody. Nopewallet supports **Solana**, **Ethereum**, **BNB Smart Chain**, **Tron**, **Polygon**, and **Bitcoin**, and is fully extensible with custom tokens and data sources. Website: [https://nopewallet.com](https://nopewallet.com)
 
 ---
 
