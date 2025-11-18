@@ -152,7 +152,10 @@ Contributions are welcome!
 - [x] Multi-chain wallet (Solana, Ethereum, BNB, Tron, Polygon, Bitcoin)
 - [x] Client-side encryption & WebAuthn unlock
 - [x] ERC-20 token support
+- [x] Sending ETH, BNB, SOL, TRX, MATIC
+- [x] QR Code reader to send crypto
 - [x] Real-time charts and prices (Paynope integration)
+- [ ] Sending Bitcoin
 - [ ] Browser extension version
 - [ ] Additional chain integrations (e.g., Avalanche)
 - [ ] Mobile-optimized interface
@@ -162,5 +165,5 @@ Contributions are welcome!
 
 ## License
 
-MIT License © 2025 Nopewallet Team
+MIT License © 2025 Paynope Team
 
