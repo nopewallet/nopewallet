@@ -297,14 +297,15 @@ export default function WalletPage({ mnemonic: initialMnemonic }: WalletPageProp
     setLoading(false);
   }
 
-  async function handleDeleteAccount(id: string) {
+async function handleDeleteAccount(id: string) {
     if (!window.confirm("Delete this account? This cannot be undone.")) return;
     await SecureWallet.clearMnemonic(id);
     await refreshAccounts();
     const remaining = await SecureWallet.listAccounts();
     if (remaining.length) {
       setAccountId(remaining[0]);
-      setMode("unlock");
+      setShowSettings(false);
+      setMode("dashboard");
     } else {
       setMode("create");
     }
