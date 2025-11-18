@@ -45,7 +45,7 @@ Nopewallet is designed as a modular, minimal, and fully client-side application:
   Sends native coins or EVM tokens.  
   Supports dynamic token loading from a database or custom contract list.
 
-- **Backup and Recovery Component:**
+- **Backup and Recovery Component:**  
   Move wallets between the browsers.  
   Export `localStorage` data into a password protected downloadable JSON file.  
   Import the `localStorage` data to recover your wallets.  
