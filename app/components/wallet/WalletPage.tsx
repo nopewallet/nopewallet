@@ -199,11 +199,13 @@ export default function WalletPage({ mnemonic: initialMnemonic }: WalletPageProp
   async function fetchBalances(addrMap: Record<string, string>) {
     setRefreshing(true);
     try {
-      const results: any = {};
-      for (const [symbol, addr] of Object.entries(addrMap)) {
-        const res = await fetch(`${process.env.BASE_BALANCE_API_URL}${addr}/${symbol}`);
-        if (res.ok) results[symbol] = await res.json();
-      }
+      const res = await fetch("/api/balance", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(addrMap),
+      });
+      if (!res.ok) throw new Error("Failed to fetch balances from API");
+      const results: any = await res.json();
       console.log("Fetched balances:", results);
       // Convert balances to display format
       const formatted: any = {};
