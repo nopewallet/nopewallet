@@ -13,6 +13,7 @@ All private keys are encrypted and stored locally in the browser, ensuring full 
 - [Data & Privacy](#data--privacy)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
+- [Purpose](#purpose)
 - [Contribution](#contribution)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -123,6 +124,12 @@ Nopewallet is designed as a modular, minimal, and fully client-side application:
 - Send/receive coins and tokens.
 - (Optional) Connect your own data source for market prices and charts.
 - Backup encrypted vault locally for safekeeping.
+
+---
+
+## Purpose 
+**Why we built Nopewallet?** Lack of Easy to Integrate Nextjs Multi-chain Wallet
+We are working on [Paynope](https://paynope.com/), a crypto payment gateway, and found it challenging to find a simple, secure, and open-source web wallet that we could easily integrate into our platform. Most existing wallets were either too complex, had backend dependencies, or lacked transparency. This motivated us to create Nopewallet, a wallet that meets our needs and can be used by others as well. We have open-sourced the project to contribute to the community and promote secure, user-controlled asset management.
 
 ---
 
