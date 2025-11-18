@@ -1,25 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server';
 const BASE_BALANCE_API_URL = process.env.BASE_BALANCE_API_URL || 'https://paynope.com/v1/balance_check/';
 
-export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
-  const addr = searchParams.get('addr');
-  const symbol = searchParams.get('symbol');
+export async function POST(req: NextRequest) {
+  const addrMap: Record<string, string> = await req.json();
+  const results: Record<string, any> = {};
 
-  if (!addr || !symbol) {
-    return NextResponse.json({ error: 'Missing addr or symbol' }, { status: 400 });
-  }
-
-  const apiUrl = `${BASE_BALANCE_API_URL}${encodeURIComponent(addr)}/${encodeURIComponent(symbol)}`;
-
-  try {
-    const res = await fetch(apiUrl);
-    if (!res.ok) {
-      return NextResponse.json({ error: 'Failed to fetch balance' }, { status: res.status });
+  for (const [symbol, addr] of Object.entries(addrMap)) {
+    if (!addr || !symbol) continue;
+    try {
+      const res = await fetch(`${BASE_BALANCE_API_URL}${encodeURIComponent(addr)}/${encodeURIComponent(symbol)}`);
+      if (res.ok) {
+        results[symbol] = await res.json();
+      } else {
+        results[symbol] = { error: 'Failed to fetch balance', status: res.status };
+      }
+    } catch (error) {
+      results[symbol] = { error: 'Internal server error' };
     }
-    const data = await res.json();
-    return NextResponse.json(data);
-  } catch (error) {
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
+
+  console.log("Fetched balances:", results);
+  return NextResponse.json(results);
 }

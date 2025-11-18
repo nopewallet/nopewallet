@@ -207,7 +207,6 @@ export default function WalletPage({ mnemonic: initialMnemonic }: WalletPageProp
       if (!res.ok) throw new Error("Failed to fetch balances from API");
       const results: any = await res.json();
       console.log("Fetched balances:", results);
-      // Convert balances to display format
       const formatted: any = {};
       for (const [shortChain, value] of Object.entries(results)) {
         const data = value as { balance?: number; usd?: number };

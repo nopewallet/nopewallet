@@ -45,7 +45,7 @@ export default function CryptoChart({ cryptoId }: { cryptoId: string }) {
   useEffect(() => {
     async function load() {
       try {
-        const res = await fetch(`/api/history?crypto=${cryptoName}`);
+        const res = await fetch(`/api/history?cryptoName=${cryptoName}`);
         const raw = await res.json();
 
         const sorted = raw
@@ -77,7 +77,7 @@ useEffect(() => {
   if (!cryptoName) return;
   const fetchHistory = async () => {
     try {
-      const res = await fetch(`/v1/prices/history/${cryptoName}`);
+      const res = await fetch(`/api/history?cryptoName=${cryptoName}`);
       const data = await res.json();
 
       const sorted = data

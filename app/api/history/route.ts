@@ -1,16 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const BASE_PRICE_HISTORY_API_URL = process.env.BASE_PRICE_HISTORY_API_URL as string;
+const BASE_PRICE_HISTORY_API_URL = process.env.BASE_PRICE_HISTORY_API_URL || 'https://paynope.com/v1/prices/history/';
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
-  const crypto = searchParams.get('crypto');
+  const crypto = searchParams.get('cryptoName');
 
   if (!crypto) {
     return NextResponse.json({ error: 'Missing crypto parameter' }, { status: 400 });
   }
 
-  const apiUrl = `${BASE_PRICE_HISTORY_API_URL}?crypto=${encodeURIComponent(crypto)}`;
+  const apiUrl = `${BASE_PRICE_HISTORY_API_URL}${encodeURIComponent(crypto)}`;
 
   try {
     const res = await fetch(apiUrl);
