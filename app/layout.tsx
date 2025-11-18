@@ -26,10 +26,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-      <link rel="icon" href="/nopewallet_logo_black.png" media="(prefers-color-scheme: light)" />
-      <link rel="icon" href="/nopewallet_logo_white.png" media="(prefers-color-scheme: dark)" />
-      </head>
       <body>
         <ThemeProvider
         attribute="class"

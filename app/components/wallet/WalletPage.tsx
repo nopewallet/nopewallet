@@ -201,7 +201,7 @@ export default function WalletPage({ mnemonic: initialMnemonic }: WalletPageProp
     try {
       const results: any = {};
       for (const [symbol, addr] of Object.entries(addrMap)) {
-        const res = await fetch(`https://paynope.com/v1/balance_check/${addr}/${symbol}`);
+        const res = await fetch(`${process.env.BASE_BALANCE_API_URL}${addr}/${symbol}`);
         if (res.ok) results[symbol] = await res.json();
       }
       console.log("Fetched balances:", results);

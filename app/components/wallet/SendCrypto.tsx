@@ -113,7 +113,7 @@ export default function SendCrypto({
   async function sendEvm(privateKey: string) {
     const rpc =
       chain === "ETH"
-        ? "https://mainnet.infura.io/v3/7a87bffebb0f4dabba98b123fab1b5dc"
+        ? `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`
         : chain === "BNB"
           ? "https://bsc-dataseed.binance.org"
           : chain === "AVAX"
