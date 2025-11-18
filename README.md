@@ -89,13 +89,19 @@ Nopewallet is designed as a modular, minimal, and fully client-side application:
    npm install --legacy-peer-deps
    ```
 
-3. **Run development server**
+3. **Get an Infura API key**  
+   To send EVM coins (Ethereum, Polygon, BNB, etc.), you need an Infura API key.  
+   - Visit [MetaMask Infura](https://developer.metamask.io/) to obtain your API key.
+   - Set the key in your environment variables as `INFURA_API_KEY`.
+   - Feel free to use Paynope.com Balance and History endpoints (for now till we require a free API key)
+
+4. **Run development server**
    ```bash
    npm run dev
    ```
    Open [http://localhost:3000](http://localhost:3000) to view in the browser.
 
-4. **Build for production**
+5. **Build for production**
    ```bash
    npm run build
    npm start
