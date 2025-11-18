@@ -8,7 +8,7 @@ import { Keypair } from "@solana/web3.js";
 import { ethers } from "ethers";
 import { TronWeb } from 'tronweb';
 import hdkey from "hdkey";
-import * as ecc from "tiny-secp256k1";
+import * as ecc from '@bitcoinerlab/secp256k1';
 import { derivePath } from "ed25519-hd-key";
 import { SecureWallet } from "./secureWallet";
 import { Button } from "@/components/ui/button";
@@ -188,8 +188,8 @@ export default function WalletPage({ mnemonic: initialMnemonic }: WalletPageProp
     const root = hdkey.fromMasterSeed(seed);
     const derivationPath = "m/44'/195'/0'/0/0";
     const child = root.derive(derivationPath);
-    const privateKeyHex = child.privateKey.toString("hex");
-    const tronAddress = tronWeb.address.fromPrivateKey(privateKeyHex);
+    const privateKeyHex = child?.privateKey?.toString("hex");
+    const tronAddress = privateKeyHex ? tronWeb.address.fromPrivateKey(privateKeyHex) : "";
 
     const a = { BTC: btcAddress ?? "", ETH: ethAddress, SOL: solAddress, TRX: tronAddress.toString(), BNB: bnbAddress, AVAX: avaxAddress, BASE: baseAddress, POL: polAddress };
     setAddresses(a);
@@ -304,7 +304,8 @@ export default function WalletPage({ mnemonic: initialMnemonic }: WalletPageProp
     const remaining = await SecureWallet.listAccounts();
     if (remaining.length) {
       setAccountId(remaining[0]);
-      setMode("unlock");
+      setShowSettings(false);
+      setMode("dashboard");
     } else {
       setMode("create");
     }

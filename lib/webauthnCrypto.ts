@@ -55,10 +55,11 @@ export const encryptAndStoreMasterPassword = async (
   const passwordBytes = encoder.encode(password);
 
   const cipher = await crypto.subtle.encrypt(
-    { name: "AES-GCM", iv },
-    key,
-    passwordBytes
-  );
+  { name: "AES-GCM", iv },
+  key,
+  passwordBytes as unknown as ArrayBuffer
+ );
+
 
   localStorage.setItem(MASTER_PASSWORD_STORAGE_KEY, bufferToBase64Url(cipher));
   localStorage.setItem(MASTER_PASSWORD_IV_KEY, bufferToBase64Url(iv));

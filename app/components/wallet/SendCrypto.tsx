@@ -5,7 +5,7 @@ import * as bip39 from "bip39";
 import * as bitcoin from "bitcoinjs-lib";
 import * as bip32Factory from "bip32";
 import hdkey from "hdkey";
-import * as ecc from "tiny-secp256k1";
+import * as ecc from '@bitcoinerlab/secp256k1';
 import nacl from "tweetnacl";
 import bs58 from "bs58";
 import * as btc from "bitcoinjs-lib"; // BTC optional for future
@@ -113,7 +113,7 @@ export default function SendCrypto({
   async function sendEvm(privateKey: string) {
     const rpc =
       chain === "ETH"
-        ? `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`
+        ? `https://mainnet.infura.io/v3/1751485a9c7a4e58b1a2287d24372bdf`
         : chain === "BNB"
           ? "https://bsc-dataseed.binance.org"
           : chain === "AVAX"
