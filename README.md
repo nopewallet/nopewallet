@@ -13,6 +13,7 @@ All private keys are encrypted and stored locally in the browser, ensuring full 
 - [Data & Privacy](#data--privacy)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
+- [Purpose](#purpose)
 - [Contribution](#contribution)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -22,7 +23,7 @@ All private keys are encrypted and stored locally in the browser, ensuring full 
 ## Features
 
 - **Client-side key storage:** WebAuthn biometric unlock and AES-GCM encryption.
-- **Multi-chain support:** Solana, Ethereum, BNB, Polygon, Bitcoin.
+- **Multi-chain support:** Solana, Ethereum, BNB, Tron, Polygon, Bitcoin.
 - **Native and token transactions:** Send and receive native coins and EVM tokens.
 - **Custom token support:** Add your own ERC-20 contracts.
 - **Real-time market data:** Powered by Paynope.
@@ -44,6 +45,12 @@ Nopewallet is designed as a modular, minimal, and fully client-side application:
 - **Send Component:**  
   Sends native coins or EVM tokens.  
   Supports dynamic token loading from a database or custom contract list.
+
+- **Backup and Recovery Component:**  
+  Move wallets between the browsers.  
+  Export `localStorage` data into a password protected downloadable JSON file.  
+  Import the `localStorage` data to recover your wallets.  
+  
 
 **Tech Stack:**
 
@@ -120,6 +127,12 @@ Nopewallet is designed as a modular, minimal, and fully client-side application:
 
 ---
 
+## Purpose 
+**Why we built Nopewallet?** Lack of Easy to Integrate Nextjs Multi-chain Wallet  
+We are working on [Paynope](https://paynope.com/), a crypto payment gateway, and found it challenging to find a simple, secure, and open-source web wallet that we could easily integrate into our platform. Most existing wallets were either too complex, had backend dependencies, or lacked transparency. This motivated us to create Nopewallet, a wallet that meets our needs and can be used by others as well. We have open-sourced the project to contribute to the community and promote secure, user-controlled asset management.
+
+---
+
 ## Contribution
 
 Contributions are welcome!
@@ -152,7 +165,10 @@ Contributions are welcome!
 - [x] Multi-chain wallet (Solana, Ethereum, BNB, Tron, Polygon, Bitcoin)
 - [x] Client-side encryption & WebAuthn unlock
 - [x] ERC-20 token support
+- [x] Sending ETH, BNB, SOL, TRX, MATIC
+- [x] QR Code reader to send crypto
 - [x] Real-time charts and prices (Paynope integration)
+- [ ] Sending Bitcoin
 - [ ] Browser extension version
 - [ ] Additional chain integrations (e.g., Avalanche)
 - [ ] Mobile-optimized interface
@@ -162,5 +178,5 @@ Contributions are welcome!
 
 ## License
 
-MIT License © 2025 Nopewallet Team
+MIT License © 2025 Paynope Team
 
