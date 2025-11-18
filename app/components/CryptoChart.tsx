@@ -45,7 +45,7 @@ export default function CryptoChart({ cryptoId }: { cryptoId: string }) {
   useEffect(() => {
     async function load() {
       try {
-        const res = await fetch(`/v1/prices/history/${cryptoName}`);
+        const res = await fetch(`https://paynope.com/v1/prices/history/${cryptoName}`);
         const raw = await res.json();
 
         const sorted = raw
