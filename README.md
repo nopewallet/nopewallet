@@ -128,7 +128,7 @@ Nopewallet is designed as a modular, minimal, and fully client-side application:
 ---
 
 ## Purpose 
-**Why we built Nopewallet?** Lack of Easy to Integrate Nextjs Multi-chain Wallet
+**Why we built Nopewallet?** Lack of Easy to Integrate Nextjs Multi-chain Wallet  
 We are working on [Paynope](https://paynope.com/), a crypto payment gateway, and found it challenging to find a simple, secure, and open-source web wallet that we could easily integrate into our platform. Most existing wallets were either too complex, had backend dependencies, or lacked transparency. This motivated us to create Nopewallet, a wallet that meets our needs and can be used by others as well. We have open-sourced the project to contribute to the community and promote secure, user-controlled asset management.
 
 ---
